@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_movie_info_app/pages/detail_page/detail_page.dart';
 import 'package:flutter_movie_info_app/pages/home_page/home_page.dart';
 
 void main() {
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      home: DetailPage(),
+      home: HomePage(),
     );
   }
 }

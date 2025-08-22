@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_movie_info_app/pages/detail_page/detail_page.dart';
 
 class HomeMovieList extends StatelessWidget {
   const HomeMovieList({super.key, required this.secTit});
@@ -19,11 +20,26 @@ class HomeMovieList extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: 20,
               itemBuilder: (context, index) {
-                return ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Image.network(
-                    'https://picsum.photos/200/300',
-                    fit: BoxFit.cover,
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return DetailPage();
+                        },
+                      ),
+                    );
+                  },
+                  child: Hero(
+                    tag: 'movie-tap',
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.network(
+                        'https://picsum.photos/200/300',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
                 );
               },
