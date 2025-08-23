@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_movie_info_app/pages/home_page/widgets/home_movie_list.dart';
-import 'package:flutter_movie_info_app/pages/home_page/widgets/home_rank_list.dart';
-import 'package:flutter_movie_info_app/pages/home_page/widgets/home_top.dart';
+import 'package:flutter_movie_info_app/presentation/pages/home_page/widgets/home_movie_list.dart';
+import 'package:flutter_movie_info_app/presentation/pages/home_page/widgets/home_rank_list.dart';
+import 'package:flutter_movie_info_app/presentation/pages/home_page/widgets/home_top.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

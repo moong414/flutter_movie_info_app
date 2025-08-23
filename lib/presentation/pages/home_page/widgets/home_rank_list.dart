@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_movie_info_app/pages/detail_page/detail_page.dart';
+import 'package:flutter_movie_info_app/presentation/pages/detail_page/detail_page.dart';
 
 class HomeRankList extends StatelessWidget {
   const HomeRankList({super.key, required this.secTit});

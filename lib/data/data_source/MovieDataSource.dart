@@ -1,6 +1,6 @@
 
-import 'package:flutter_movie_info_app/pages/data/dto/movie_detail_dto.dart';
-import 'package:flutter_movie_info_app/pages/data/dto/movie_response_dto.dart';
+import 'package:flutter_movie_info_app/data/dto/movie_detail_dto.dart';
+import 'package:flutter_movie_info_app/data/dto/movie_response_dto.dart';
 
 abstract interface class MovieDataSource {
   Future<MovieResponseDto?> fetchNowPlayingMovies();
