@@ -1,11 +1,11 @@
-class Welcome {
+class MovieResponseDto {
     Dates dates;
     int page;
     List<Result> results;
     int totalPages;
     int totalResults;
 
-    Welcome({
+    MovieResponseDto({
         required this.dates,
         required this.page,
         required this.results,

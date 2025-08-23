@@ -1,4 +1,4 @@
-class Welcome {
+class MovieDetailDto {
     bool adult;
     String backdropPath;
     BelongsToCollection belongsToCollection;
@@ -26,7 +26,7 @@ class Welcome {
     double voteAverage;
     int voteCount;
 
-    Welcome({
+    MovieDetailDto({
         required this.adult,
         required this.backdropPath,
         required this.belongsToCollection,
