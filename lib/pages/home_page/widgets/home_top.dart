@@ -14,10 +14,8 @@ class HomeTop extends StatelessWidget {
           Text('가장 인기있는', style: TextStyle(fontSize: 18)),
           SizedBox(height: 15),
           GestureDetector(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return DetailPage();
-              },));
+            onTap: () {
+              toDetailPage(context);
             },
             child: Hero(
               tag: 'movie-tap',
@@ -37,4 +35,15 @@ class HomeTop extends StatelessWidget {
       ),
     );
   }
+}
+
+void toDetailPage(BuildContext context) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) {
+        return DetailPage();
+      },
+    ),
+  );
 }
