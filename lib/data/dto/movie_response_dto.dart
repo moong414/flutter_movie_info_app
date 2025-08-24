@@ -13,6 +13,14 @@ class MovieResponseDto {
         required this.totalResults,
     });
 
+    MovieResponseDto.fromJson(Map<String, dynamic> map) : this(
+      dates: map['dates'],
+      page: map['page'],
+      results: List<Result>.from(map['results']),
+      totalPages: map['total_pages'],
+      totalResults: map['total_results']
+    );
+
 }
 
 class Dates {
