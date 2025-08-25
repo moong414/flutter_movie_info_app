@@ -11,7 +11,6 @@ class DetailPageViewModel extends Notifier<MovieDetailDto?>{
   Future<void> fetchMovieDetail(int id) async{
     state = await ref.read(fetchMovieDetailUsecaseProvider).execute(id);
   }
-
   
 }
 
