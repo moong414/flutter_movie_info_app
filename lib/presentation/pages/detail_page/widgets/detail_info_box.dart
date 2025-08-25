@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class DetailInfoBox extends StatelessWidget {
-  const DetailInfoBox({super.key});
+  const DetailInfoBox({super.key, required this.etcTit, required this.etcInfo});
+
+  final String etcTit;
+  final String etcInfo;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,7 @@ class DetailInfoBox extends StatelessWidget {
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Text('6.949'), Text('평점')],
+        children: [Text(etcInfo), Text(etcTit)],
       ),
     );
   }

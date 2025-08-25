@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_movie_info_app/presentation/pages/detail_page/detail_page.dart';
 import 'package:flutter_movie_info_app/presentation/pages/home_page/home_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      home: DetailPage(id: 278),
+      home: HomePage()
     );
   }
 }

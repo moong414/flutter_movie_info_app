@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_movie_info_app/presentation/pages/detail_page/detail_page_view_model.dart';
-import 'package:flutter_movie_info_app/presentation/pages/detail_page/widgets/detai_info.dart';
+import 'package:flutter_movie_info_app/presentation/pages/detail_page/widgets/detail_info.dart';
 import 'package:flutter_movie_info_app/presentation/pages/detail_page/widgets/detail_top.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -23,10 +23,9 @@ class _DetailPageState extends ConsumerState<DetailPage> {
   @override
   Widget build(BuildContext context) {
     final detail = ref.watch(detailPageViewModelProvider);
-    String thisPosterPath = '';
+    String thisPosterPath = ''; //포스터
+    
     if(detail != null){
-      print(detail);
-      print(detail.posterPath);
       thisPosterPath = detail.posterPath;
     }
 
