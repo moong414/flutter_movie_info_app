@@ -24,9 +24,10 @@ class MovieDataSourceImpl implements MovieDataSource {
         return MovieDetailDto.fromJson(map);
       } else {
         print('요청실패! ${result.statusCode}');
+        return null; 
       }
     } catch (e) {
-      print('에러: $e');
+      print('fetchMovieDetail 데이터 에러: $e');
       return null;
     }
   }
@@ -45,9 +46,10 @@ class MovieDataSourceImpl implements MovieDataSource {
         return MovieResponseDto.fromJson(map);
       } else {
         print('요청실패! ${result.statusCode}');
+        return null; 
       }
     } catch (e) {
-      print('에러: $e');
+      print('fetchNowPlayingMovies 데이터 에러: $e');
       return null;
     }
   }
@@ -66,9 +68,10 @@ class MovieDataSourceImpl implements MovieDataSource {
         return MovieResponseDto.fromJson(map);
       } else {
         print('요청실패! ${result.statusCode}');
+        return null; 
       }
     } catch (e) {
-      print('에러: $e');
+      print('fetchPopularMovies 데이터 에러: $e');
       return null;
     }
   }
@@ -87,9 +90,10 @@ class MovieDataSourceImpl implements MovieDataSource {
         return MovieResponseDto.fromJson(map);
       } else {
         print('요청실패! ${result.statusCode}');
+        return null; 
       }
     } catch (e) {
-      print('에러: $e');
+      print('fetchTopRatedMovies 데이터 에러: $e');
       return null;
     }
   }
@@ -108,9 +112,10 @@ class MovieDataSourceImpl implements MovieDataSource {
         return MovieResponseDto.fromJson(map);
       } else {
         print('요청실패! ${result.statusCode}');
+        return null; 
       }
     } catch (e) {
-      print('에러: $e');
+      print('fetchUpcomingMovies 데이터 에러: $e');
       return null;
     }
   }

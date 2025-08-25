@@ -1,6 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
-
 // {
 //   "dates": {
 //     "maximum": "2025-08-27",
@@ -45,7 +42,7 @@ class MovieResponseDto {
 
   MovieResponseDto.fromJson(Map<String, dynamic> map)
     : this(
-        dates: map['dates'],
+        dates: map['dates'] != null ? Dates.fromJson(map['dates'] as Map<String, dynamic>) : null,
         page: map['page'],
         results: (map['results'] as List).map((e)=>Result.fromJson(e as Map<String, dynamic>)).toList(),
         totalPages: map['total_pages'],

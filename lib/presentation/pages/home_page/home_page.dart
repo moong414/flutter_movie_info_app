@@ -2,17 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_movie_info_app/presentation/pages/home_page/widgets/home_movie_list.dart';
 import 'package:flutter_movie_info_app/presentation/pages/home_page/widgets/home_rank_list.dart';
 import 'package:flutter_movie_info_app/presentation/pages/home_page/widgets/home_top.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomePage extends ConsumerStatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  @override
-  ConsumerState<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends ConsumerState<HomePage> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

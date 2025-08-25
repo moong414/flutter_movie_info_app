@@ -13,7 +13,6 @@ class DetailPage extends ConsumerStatefulWidget {
 }
 
 class _DetailPageState extends ConsumerState<DetailPage> {
-
   @override
   void initState() {
     super.initState();
@@ -22,8 +21,12 @@ class _DetailPageState extends ConsumerState<DetailPage> {
 
   @override
   Widget build(BuildContext context) {
+    
     final detail = ref.watch(detailPageViewModelProvider);
     String thisPosterPath = ''; //포스터
+
+    print('id가 뭐임 ${widget.id}==================');
+    print('detail 뭐임 $detail==================');
     
     if(detail != null){
       thisPosterPath = detail.posterPath;

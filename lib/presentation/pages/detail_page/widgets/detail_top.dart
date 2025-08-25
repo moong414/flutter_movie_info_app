@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class DetailTop extends StatelessWidget {
   const DetailTop({super.key, required this.posterPath});
   final String posterPath;
+
   
   @override
   Widget build(BuildContext context) {
