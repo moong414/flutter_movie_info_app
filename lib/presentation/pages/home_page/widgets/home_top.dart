@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_movie_info_app/presentation/pages/detail_page/detail_page.dart';
+import 'package:flutter_movie_info_app/presentation/pages/home_page/home_page_view_model.dart';
+import 'package:flutter_movie_info_app/presentation/pages/widgets/to_detail_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomeTop extends StatelessWidget {
+class HomeTop extends ConsumerWidget {
   const HomeTop({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    
+    final hvProvider = ref.watch(homePageViewModelProvider)?.results ?? [];
+    
+    int id = 0;
+    String posterPath = '';
+    if(hvProvider.isNotEmpty){
+      id = hvProvider[0].id;
+      posterPath = hvProvider[0].posterPath;
+    }
+
     return Container(
       padding: EdgeInsets.all(15),
       child: Column(
@@ -15,7 +27,7 @@ class HomeTop extends StatelessWidget {
           SizedBox(height: 15),
           GestureDetector(
             onTap: () {
-              toDetailPage(context);
+              toDetailPage(context, id);
             },
             child: Hero(
               tag: 'movie-tap',
@@ -24,7 +36,10 @@ class HomeTop extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadiusGeometry.circular(10),
                   child: Image.network(
-                    'https://picsum.photos/200/300',
+                    hvProvider.isNotEmpty?
+                    'https://image.tmdb.org/t/p/w600_and_h900_bestv2$posterPath'
+                    : 'https://picsum.photos/200/300'
+                    ,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -37,13 +52,3 @@ class HomeTop extends StatelessWidget {
   }
 }
 
-void toDetailPage(BuildContext context) {
-  Navigator.push(
-    context,
-    MaterialPageRoute(
-      builder: (context) {
-        return DetailPage();
-      },
-    ),
-  );
-}

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_movie_info_app/presentation/pages/detail_page/detail_page.dart';
 
 class HomeRankList extends StatelessWidget {
   const HomeRankList({super.key, required this.secTit});
@@ -24,25 +23,15 @@ class HomeRankList extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return DetailPage();
-                            },
-                          ),
-                        );
+                        // toDetailPage(context, id);
                       },
                       child: Padding(
                         padding: const EdgeInsets.only(left: 30),
-                        child: Hero(
-                          tag: 'movie-tap',
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Image.network(
-                              'https://picsum.photos/200/300',
-                              fit: BoxFit.cover,
-                            ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.network(
+                            'https://picsum.photos/200/300',
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),

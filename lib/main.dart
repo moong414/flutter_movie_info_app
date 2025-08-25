@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_movie_info_app/presentation/pages/detail_page/detail_page.dart';
 import 'package:flutter_movie_info_app/presentation/pages/home_page/home_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 Future<void> main() async {
   await dotenv.load(fileName: ".env");
-  runApp(const MyApp());
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      home: HomePage(),
+      home: DetailPage(id: 278),
     );
   }
 }

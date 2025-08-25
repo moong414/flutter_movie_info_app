@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class DetailTop extends StatelessWidget {
-  const DetailTop({super.key});
-
+  const DetailTop({super.key, required this.posterPath});
+  final String posterPath;
+  
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -15,7 +16,9 @@ class DetailTop extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadiusGeometry.circular(10),
               child: Image.network(
-                'https://picsum.photos/200/300',
+                posterPath.isNotEmpty ? 
+                'https://image.tmdb.org/t/p/w600_and_h900_bestv2$posterPath'
+                : 'https://picsum.photos/200/300',
                 fit: BoxFit.cover,
               ),
             ),

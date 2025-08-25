@@ -59,7 +59,7 @@
 class MovieDetailDto {
     bool adult;
     String backdropPath;
-    BelongsToCollection belongsToCollection;
+    BelongsToCollection? belongsToCollection;
     int budget;
     List<Genre> genres;
     String homepage;
@@ -82,7 +82,7 @@ class MovieDetailDto {
     String title;
     bool video;
     double voteAverage;
-    int voteCount;
+    int? voteCount;
 
     MovieDetailDto({
         required this.adult,
@@ -119,7 +119,7 @@ class MovieDetailDto {
       backdropPath : map['backdrop_path'],
       belongsToCollection : map['belongs_to_collection'],
       budget : map['budget'],
-      genres : List<Genre>.from(map['genres']),
+      genres : (map['genres'] as List).map((e)=>Genre.fromJson(e as Map<String, dynamic>)).toList(),
       homepage : map['homepage'],
       id : map['id'],
       imdbId : map['imdb_id'],
@@ -129,12 +129,12 @@ class MovieDetailDto {
       overview : map['overview'],
       popularity : map['popularity'],
       posterPath : map['poster_path'],
-      productionCompanies : List<ProductionCompany>.from(map['production_companies']),
-      productionCountries : List<ProductionCountry>.from(map['production_countries']),
-      releaseDate : map['release_date'],
+      productionCompanies : (map['production_companies'] as List).map((e)=>ProductionCompany.fromJson(e as Map<String, dynamic>)).toList(),
+      productionCountries : (map['production_countries'] as List).map((e)=>ProductionCountry.fromJson(e as Map<String, dynamic>)).toList(),
+      releaseDate : DateTime.parse(map['release_date']),
       revenue : map['revenue'],
       runtime : map['runtime'],
-      spokenLanguages : List<SpokenLanguage>.from(map['spoken_languages']),
+      spokenLanguages : (map['spoken_languages'] as List).map((e)=>SpokenLanguage.fromJson(e as Map<String, dynamic>)).toList(),
       status : map['status'],
       tagline : map['tagline'],
       title : map['title'],
@@ -170,6 +170,11 @@ class Genre {
         required this.name,
     });
 
+    Genre.fromJson(Map<String, dynamic> map) : this(
+      id: map['id'],
+      name: map['name'],
+    );
+
 }
 
 class ProductionCompany {
@@ -185,6 +190,13 @@ class ProductionCompany {
         required this.originCountry,
     });
 
+    ProductionCompany.fromJson(Map<String, dynamic> map) : this(
+      id: map['id'],
+      logoPath: map['logo_path'],
+      name: map['name'],
+      originCountry: map['origin_country'],
+    );
+
 }
 
 class ProductionCountry {
@@ -195,6 +207,11 @@ class ProductionCountry {
         required this.iso31661,
         required this.name,
     });
+
+    ProductionCountry.fromJson(Map<String, dynamic> map) : this(
+      iso31661: map['iso_3166_1'],
+      name: map['name'],
+    );
 
 }
 
@@ -208,6 +225,12 @@ class SpokenLanguage {
         required this.iso6391,
         required this.name,
     });
+
+    SpokenLanguage.fromJson(Map<String, dynamic> map) : this(
+      englishName: map['english_name'],
+      iso6391: map['iso_639_1'],
+      name: map['name'],
+    );
 
 }
 
